@@ -11,6 +11,15 @@ const io = new Server(server, {
   }
 });
 
+// CORS for all Express routes
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+});
+
 app.get('/', (req, res) => res.send('3D Shooter Server Online'));
 app.get('/ping', (req, res) => res.json({ status: 'ok', players: Object.keys(players).length }));
 

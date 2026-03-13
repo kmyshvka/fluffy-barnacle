@@ -57,13 +57,13 @@ function generateLevel(seed) {
   const PLATFORM_COUNT = 14 + Math.floor(rng() * 6);
 
   // Starting platform
-  platforms.push({ x: 0, y: -2, z: 0, w: 4, d: 4, type: 'start' });
+  platforms.push({ x: 0, y: -2, z: 0, w: 5, d: 5, type: 'start' });
 
-  let x = 0, y = -2, z = -6;
+  let x = 0, y = -2, z = -3;
   for (let i = 0; i < PLATFORM_COUNT; i++) {
-    const dx = (rng() - 0.5) * 3.5;
-    const dy = (rng() - 0.45) * 1.5;
-    const dz = -(2.5 + rng() * 1.5);
+    const dx = (rng() - 0.5) * 2.5;
+    const dy = (rng() - 0.5) * 1.2;
+    const dz = -(2.2 + rng() * 1.2);
 
     x = Math.max(-12, Math.min(12, x + dx));
     y = Math.max(-4, Math.min(8, y + dy));

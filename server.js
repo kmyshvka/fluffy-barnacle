@@ -61,9 +61,9 @@ function generateLevel(seed) {
 
   let x = 0, y = -2, z = -6;
   for (let i = 0; i < PLATFORM_COUNT; i++) {
-    const dx = (rng() - 0.3) * 5;
-    const dy = (rng() - 0.4) * 2.5;
-    const dz = -(3 + rng() * 3);
+    const dx = (rng() - 0.5) * 3.5;
+    const dy = (rng() - 0.45) * 1.5;
+    const dz = -(2.5 + rng() * 1.5);
 
     x = Math.max(-12, Math.min(12, x + dx));
     y = Math.max(-4, Math.min(8, y + dy));
